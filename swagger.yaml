@@ -1,0 +1,234 @@
+openapi: "3.0.0"
+info:
+  title: T-shirst store API
+  description: Learning API for node-ecomm-store
+  version: 1.0.0
+  contact:
+    email: shubhamjadhav190@gmail.com
+    phone: +918007454373
+    url: https://localhost:5000/
+
+servers:
+  - url: "{protocols}://localhost:5000/api/{version}"
+    description: A localhost server-secure
+    variables:
+      version:
+        enum:
+          - v1
+          # - v2
+        default: v1
+      protocols:
+        enum:
+          - http
+          # - https
+        default: http
+
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: token
+    BearerAuth:
+      type: http
+      scheme: bearer
+
+paths:
+  /:
+    get:
+      tags:
+        - Home
+      summary: returns a greet message with success:true
+      responses:
+        200:
+          description: all good and success
+          content:
+            application/json:
+              schema:
+                type: string
+                exmaple: mystring
+                
+        400:
+          description: bad request
+        500:
+          description: internal server error
+
+  # /lcoobject:
+  #   get:
+  #     tags:
+  #       - Object
+  #     summary: returns a object with all the info including price
+  #     responses:
+  #       200:
+  #         description: all good and success
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: object
+  #               properties: 
+  #                 id:
+  #                   type: string
+  #                 name:
+  #                   type: string
+  #                 price:
+  #                   type: string
+                
+  #       400:
+  #         description: bad request
+  #       500:
+  #         description: internal server error
+  # /courses:
+  #   get:
+  #     tags:
+  #       - Array
+  #     summary: returns a array of objects with course info
+  #     responses:
+  #       200:
+  #         description: all good and success
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: array
+  #               items:
+  #                 type: object
+  #                 properties: 
+  #                   id:
+  #                     type: string
+  #                   name:
+  #                     type: string
+  #                   price:
+  #                     type: number
+                
+  #       400:
+  #         description: bad request
+  #       500:
+  #         description: internal server error
+
+  # /mycourses/{cid}:
+  #   get:
+  #     tags:
+  #       - String
+  #     summary: returns course based on req id
+  #     parameters:
+  #       - name: cid
+  #         in: path
+  #         required: true
+  #         default: 11
+  #         schema:
+  #           type: string
+  #     responses:
+  #       200:
+  #         description: all good and success
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: object
+  #               properties: 
+  #                 id:
+  #                   type: string
+  #                 name:
+  #                   type: string
+  #                 price:
+  #                   type: number
+                
+  #       400:
+  #         description: bad request
+  #       500:
+  #         description: internal server error
+
+  # /addcourse:
+  #   post:
+  #     tags:
+  #       - String
+  #     summary: add a new course to the courses
+  #     consumes:
+  #       - application/json
+  #     produces:
+  #       - application/json
+  #     requestBody:
+  #       required: true
+  #       content:
+  #         application/json:
+  #           schema:
+  #             type: object
+  #             properties: 
+  #               id:
+  #                 type: string
+  #               name:
+  #                 type: string
+  #               price:
+  #                 type: number
+  #     responses:
+  #       200:
+  #         description: all good and success
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: boolean
+                
+  #       400:
+  #         description: bad request
+  #       500:
+  #         description: internal server error
+
+  # /coursequery:
+  #   get:
+  #     tags:
+  #       - String
+  #     summary: trying to learn about query parameters
+  #     parameters:
+  #       - name: location
+  #         in : query
+  #         required: true
+  #         schema:
+  #           type: string
+  #           enum: [delhi, londun, mumbai]
+  #       - name: device
+  #         in : query
+  #         required: true
+  #         schema:
+  #           type: string
+  #           enum: [laptop, mobile, web]   
+  #     responses:
+  #       200:
+  #         description: all good and success
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: object
+  #               properties:
+  #                 name:
+  #                   type: string
+  #                 value:
+  #                   type: string
+                
+  #       400:
+  #         description: bad request
+  #       500:
+  #         description: internal server error
+
+  # /courseupload:
+  #   post:
+  #     tags:
+  #       - String
+  #     summary: upload course image
+  #     parameters:
+  #       - in: header
+  #         name: auth
+  #     requestBody:
+  #       content: 
+  #         multipart/form-data:
+  #           schema:
+  #             type: object
+  #             properties:
+  #               file:
+  #                 type: string
+  #                 format: binary   
+  #     responses:
+  #       200:
+  #         description: all good and success
+                
+  #       400:
+  #         description: bad request
+  #       500:
+  #         description: internal server error
