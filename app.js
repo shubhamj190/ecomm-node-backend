@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+var cors = require('cors')
 var morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const fileupload = require("express-fileupload");
@@ -8,6 +9,8 @@ const fileupload = require("express-fileupload");
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./swagger.yaml');
+
+app.use(cors())
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // temp middleware of image upload testing
@@ -47,5 +50,8 @@ app.use("/api/v1/", payment);
 app.use("/api/v1/", order);
 app.get('/signuptest',(req,res)=>{
     res.render('uploadtest');
+})
+app.get('/',(req, res)=>{
+    res.render('home')
 })
 module.exports = app;

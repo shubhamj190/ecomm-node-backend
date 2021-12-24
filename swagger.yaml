@@ -1,6 +1,6 @@
 openapi: "3.0.0"
 info:
-  title: T-shirst store API
+  title: Simple Ecomm store API
   description: Learning API for node-ecomm-store
   version: 1.0.0
   contact:
@@ -9,19 +9,22 @@ info:
     url: https://localhost:5000/
 
 servers:
-  - url: "{protocols}://localhost:5000/api/{version}"
-    description: A localhost server-secure
+  - url: "http://localhost:5000/api/{version}"
+    description: A localhost server
     variables:
       version:
         enum:
           - v1
           # - v2
         default: v1
-      protocols:
+  - url: "https://shubhamnodebackend.herokuapp.com/api/v1/"
+    description: The production server 
+    variables:
+      version:
         enum:
-          - http
-          # - https
-        default: http
+          - v1
+          # - v2
+        default: v1
 
 components:
   securitySchemes:
