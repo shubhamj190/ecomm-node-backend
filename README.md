@@ -2,8 +2,8 @@
 ## _Node Ecomm store backend_
 
 This application is deployed on heroku platform for CI/CD integreation
-You can vistit tive version by visiting the [link](https://shubhamnodebackend.herokuapp.com)
-For documentaion visit [here](https://shubhamnodebackend.herokuapp.com/api-docs)
+- You can vistit tive version by visiting the [link](https://shubhamnodebackend.herokuapp.com)
+- For documentaion visit [here](https://shubhamnodebackend.herokuapp.com/api-docs)
 
 
 ## Technologies used here are 
