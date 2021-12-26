@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectwithDB = () => {
   try {
-    mongoose.connect('mongodb+srv://shubham:nokia300@cluster0.5wlnu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+    mongoose.connect(process.env.DB_URL, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
     });
