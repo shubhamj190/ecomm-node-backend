@@ -5,7 +5,7 @@ exports.sendStripeKeys = async (req, res, next) => {
   try {
     res.status(200).json({
       scuccess: true,
-      stripe_key: process.env.STRIPE_API_KEY,
+      stripe_key: "This is a dummy key",
     });
   } catch (error) {
     console.log(error);
@@ -38,7 +38,7 @@ exports.sendRazorpayKeys = async (req, res, next) => {
   try {
     res.status(200).json({
       scuccess: true,
-      stripe_key: process.env.RAZORPAY_API_KEY,
+      stripe_key: "This is a dummy key",
     });
   } catch (error) {
     console.log(error);

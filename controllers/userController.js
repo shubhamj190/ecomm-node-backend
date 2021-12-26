@@ -105,7 +105,7 @@ exports.forgotPassword = async (req, res, next) => {
     )}/api/v1/password/reset/${forgotToken}`;
     console.log("forgot password url", myurl);
 
-    const message = `copy pase this ${myurl} and hit enter\n\n ${myurl}`;
+    const message = `copy paste this ${myurl} and hit enter\n\n ${myurl}`;
 
     try {
       await sendEmail({
