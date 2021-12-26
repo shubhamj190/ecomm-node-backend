@@ -6,7 +6,7 @@ This application is deployed on heroku platform for CI/CD integreation
 - For documentaion visit [here](https://shubhamnodebackend.herokuapp.com/api-docs)
 
 
-## Technologies used here are 
+## Technologies:
 
 - Node
 - Express
